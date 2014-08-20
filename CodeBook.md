@@ -6,13 +6,12 @@ Please note that for all numeric variables the range of values is [-1, 1]
 unless provided separately for given variable.
 
 * subjectNumber   : integer<BR>
-  Description: Number of the subject tested
-  Number of the subject tested<BR>
+  Description: Number of the subject tested<BR>
   Range:        1..30<BR>
   Units: none
 
 * activityLabel   : Factor w/ 6 levels<BR>
-  Description:Activity performed by subject<BR>
+  Description: Activity performed by subject<BR>
   Values:       LAYING; SITTING; STANDING; WALKING; WALKING_DOWNSTAIRS; WALKING_UPSTAIRS<BR>
   Units: none
 

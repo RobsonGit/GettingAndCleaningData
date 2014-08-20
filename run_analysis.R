@@ -1,4 +1,4 @@
-# Set your working directory with setwd() function – if you want.
+# Set your working directory with setwd() function – if you want any specific directory.
 # The following commands download the file and unzip the data.
 url = "http://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
 download.file(url, destfile = "./getdata-projectfiles-UCI HAR Dataset.zip", mode = "wb")
