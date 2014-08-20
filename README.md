@@ -5,7 +5,26 @@ in "Getting and Cleaning Data" course.
 
 The user can set his working directory with setwd() function before 
 running the code. The code downloads the data and unzips it in the working
-directory automatically. Then it reads the txt files.
+directory automatically. Then it reads the txt files with below function.
+
+```r
+# readFile function reads the txt file pointed by user
+readFile <- function(filename_to_read, filename_to_save) {
+               file_name_to_save = read.table(filename_to_read)
+               assign(filename_to_save, file_name_to_save, envir=.GlobalEnv)
+}
+
+readFile("./UCI HAR Dataset/activity_labels.txt", "activity_labels")
+readFile("./UCI HAR Dataset/features.txt", "features")
+
+readFile("./UCI HAR Dataset/test/subject_test.txt", "subject_test")
+readFile("./UCI HAR Dataset/test/X_test.txt", "x_test")
+readFile("./UCI HAR Dataset/test/y_test.txt", "y_test")
+
+readFile("./UCI HAR Dataset/train/subject_train.txt", "subject_train")
+readFile("./UCI HAR Dataset/train/X_train.txt", "x_train")
+readFile("./UCI HAR Dataset/train/y_train.txt", "y_train")
+```
 
 After reading all the data from txt files I analyzed the structure of 
 files. Dimensions of files, checked with dim() command on each file:
@@ -49,28 +68,6 @@ includes "mean" or "std" in its name (features.txt provides with information
 regarding names of measurements).
 
 e) The final tidy file will be on combined subject + activity level.
-
-At first the data was downloaded and unzipped. Then read into R from working directory:
-
-
-```r
-# readFile function reads the txt file pointed by user
-readFile <- function(filename_to_read, filename_to_save) {
-               file_name_to_save = read.table(filename_to_read)
-               assign(filename_to_save, file_name_to_save, envir=.GlobalEnv)
-}
-
-readFile("./UCI HAR Dataset/activity_labels.txt", "activity_labels")
-readFile("./UCI HAR Dataset/features.txt", "features")
-
-readFile("./UCI HAR Dataset/test/subject_test.txt", "subject_test")
-readFile("./UCI HAR Dataset/test/X_test.txt", "x_test")
-readFile("./UCI HAR Dataset/test/y_test.txt", "y_test")
-
-readFile("./UCI HAR Dataset/train/subject_train.txt", "subject_train")
-readFile("./UCI HAR Dataset/train/X_train.txt", "x_train")
-readFile("./UCI HAR Dataset/train/y_train.txt", "y_train")
-```
 
 In order to create the tidy dataset I followed the steps requested in project:
 
